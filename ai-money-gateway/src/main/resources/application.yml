@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: ai-money-gateway
+  cloud:
+    nacos:
+      server-addr: 192.168.1.2:8848
+      username: nacos
+      password: nacos
+      discovery:
+        namespace: ai-money
+        group: dev
+      config:
+        namespace: ai-money
+        group: dev
+        refresh-enabled: true
+  config:
+    import:
+      - nacos:${spring.application.name}.yaml
