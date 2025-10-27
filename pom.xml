@@ -16,6 +16,8 @@
         <module>ai-money-gateway</module>
         <module>ai-money-common</module>
         <module>ai-money-user</module>
+        <module>ai-money-ai</module>
+        <module>ai-money-ledger</module>
     </modules>
 
 
