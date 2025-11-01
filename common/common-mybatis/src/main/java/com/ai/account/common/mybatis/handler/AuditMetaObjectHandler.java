@@ -1,13 +1,18 @@
 package com.ai.account.common.mybatis.handler;
 
+import com.ai.account.common.core.user.CurrentUserProvider;
 import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.reflection.MetaObject;
 
 import java.time.LocalDateTime;
 
 @Slf4j
+@RequiredArgsConstructor
 public class AuditMetaObjectHandler implements MetaObjectHandler {
+
+    private final CurrentUserProvider currentUserProvider;
 
     @Override
     public void insertFill(MetaObject metaObject) {
@@ -29,7 +34,10 @@ public class AuditMetaObjectHandler implements MetaObjectHandler {
     }
 
     protected Long currentUserId() {
-        return null;
+        try {
+            return currentUserProvider.getCurrentUserId();
+        } catch (Exception e) {
+            return null;
+        }
     }
 }
-

@@ -24,10 +24,14 @@
             <version>${project.version}</version>
         </dependency>
         <dependency>
+            <groupId>com.ai.account</groupId>
+            <artifactId>common-mybatis</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <scope>provided</scope>
         </dependency>
     </dependencies>
 </project>
-

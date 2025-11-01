@@ -55,7 +55,7 @@ public class UserService {
         if (opt.isEmpty()) {
             throw new IllegalArgumentException("user not found");
         }
-        String token = jwtUtils.generateToken(String.valueOf(opt.get().getId()), 3600, Map.of("scope", "user"));
+        String token = jwtUtils.generateToken(String.valueOf(opt.get().getId()), 3600, Map.of("scope", opt.get()));
         TokenVO t = new TokenVO();
         t.setAccessToken(token);
         t.setExpiresIn(3600);
