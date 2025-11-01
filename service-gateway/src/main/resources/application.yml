@@ -1,0 +1,25 @@
+server:
+  port: 80
+spring:
+  application:
+    name: gateway-service
+  cloud:
+    gateway:
+      routes:
+        - id: user
+          uri: lb://user-service
+          predicates:
+            - Path=/api/user/**
+        - id: record
+          uri: lb://record-service
+          predicates:
+            - Path=/api/record/**
+        - id: mcp
+          uri: lb://mcp-bridge-service
+          predicates:
+            - Path=/mcp/**
+        - id: advice
+          uri: lb://ai-advice-service
+          predicates:
+            - Path=/api/advice/**
+

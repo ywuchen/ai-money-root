@@ -1,0 +1,20 @@
+server:
+  port: 8001
+spring:
+  application:
+    name: user-service
+  datasource:
+    url: jdbc:mysql://120.24.184.17:3306/ai_account?currentSchema=public&sslmode=disable&ApplicationName=user-service&reWriteBatchedInserts=true&stringtype=unspecified&connectTimeout=10&socketTimeout=30&tcpKeepAlive=true&targetServerType=primary
+    username: postgres
+    password: postgres
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: false
+logging:
+  level:
+    com.ai.account: INFO
+security:
+  jwt-secret: change-me-please-32-bytes-secret-key
+
